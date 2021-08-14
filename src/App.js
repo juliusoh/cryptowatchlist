@@ -11,8 +11,9 @@ const App = () => {
     <div className="container">
       <WatchListContextProvider>
       <BrowserRouter>
-      <Header />
+        <Header />
         <Route exact path="/" component={CoinSummaryScreen} />
+        <Route path="/coins/:id" component={CoinDetailScreen} />
       </BrowserRouter>
       </WatchListContextProvider>
     </div>
