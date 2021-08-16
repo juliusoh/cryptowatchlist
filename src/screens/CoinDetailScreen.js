@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import CoinData from "../components/CoinData";
 import HistoryChart from "../components/HistoryChart";
 import coinGecko from "../apis/coinGecko";
+import { Link } from "react-router-dom";
 
 const CoinDetailScreen = () => {
   const { id } = useParams();
@@ -69,7 +70,8 @@ const CoinDetailScreen = () => {
     return (
       <div className="coinlist">
         <HistoryChart data={coinData} />
-        <CoinData />
+        <CoinData data={coinData.detail}/>
+        <Link className="btn btn-light my-3" to="/">Go Back</Link>
       </div>
     );
   };
